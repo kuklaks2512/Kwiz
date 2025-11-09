@@ -28,48 +28,48 @@ let a10 = document.querySelector(".a10")
 
 
 difficulty.addEventListener("click", function () {
-if (difficulty.innerHTML == "Easy"){
-    difficulty.innerHTML = "Medium"
-    minimum = 1
-    maximum = 30
-    restart()
-}
-else if (difficulty.innerHTML == "Medium") {
-    difficulty.innerHTML = "Hard"
-    minimum = -100
-    maximum = 100
-    restart() 
-} 
-else if (difficulty.innerHTML == "Hard") {
-    difficulty.innerHTML = "Torture"
-    minimum = -1000
-    maximum = 1000
-    restart()
-}
+    if (difficulty.innerHTML == "Easy") {
+        difficulty.innerHTML = "Medium"
+        minimum = 1
+        maximum = 30
+        restart()
+    }
+    else if (difficulty.innerHTML == "Medium") {
+        difficulty.innerHTML = "Hard"
+        minimum = -100
+        maximum = 100
+        restart()
+    }
+    else if (difficulty.innerHTML == "Hard") {
+        difficulty.innerHTML = "Torture"
+        minimum = -1000
+        maximum = 1000
+        restart()
+    }
 
-else if (difficulty.innerHTML == "Torture"){
-    difficulty.innerHTML = "Custom"
-    minimum = 0
-    maximum = 0
-    acmax.innerHTML = "Maximum"
-    bcmin.innerHTML = "Minimum"
-    edit.style.scale = "0.5"
-    edit2.style.scale = "0.5"
-    restart()
-}
-else {
-    difficulty.innerHTML = "Easy"
-    minimum = 1
-    maximum = 10
-    edit.style.scale = "0"
-    edit2.style.scale = "0"
-    restart()
-}
+    else if (difficulty.innerHTML == "Torture") {
+        difficulty.innerHTML = "Custom"
+        minimum = 0
+        maximum = 0
+        acmax.innerHTML = "Maximum"
+        bcmin.innerHTML = "Minimum"
+        edit.style.scale = "0.5"
+        edit2.style.scale = "0.5"
+        restart()
+    }
+    else {
+        difficulty.innerHTML = "Easy"
+        minimum = 1
+        maximum = 10
+        edit.style.scale = "0"
+        edit2.style.scale = "0"
+        restart()
+    }
 
 })
 
 function restart() {
-    current_question = new Question()  
+    current_question = new Question()
     current_question.display()
     correct.innerHTML = 0
     incorrect.innerHTML = 0
@@ -103,13 +103,13 @@ class Question {
         let a = randint(minimum, maximum)
         let b = randint(minimum, maximum)
         let sign = getRandomSign()
-        
 
-    if (sign == "/"){
-        this.question = `${a * b}${sign}${b}` 
+
+        if (sign == "/") {
+            this.question = `${a * b}${sign}${b}`
         }
-        else{
-        this.question = `${a} ${sign} ${b}`
+        else {
+            this.question = `${a} ${sign} ${b}`
         }
 
         if (sign == "+") {
@@ -122,13 +122,13 @@ class Question {
             this.correct = a * b
         }
 
-             this.answers = [
+        this.answers = [
             randint(this.correct - 15, this.correct + 15),
             randint(this.correct - 15, this.correct + 15),
             this.correct,
             randint(this.correct - 15, this.correct + 15),
-            randint(this.correct - 15, this.correct + 15), 
-                ]
+            randint(this.correct - 15, this.correct + 15),
+        ]
 
         shuffle(this.answers)
     }
@@ -156,7 +156,7 @@ for (let i = 0; i < answers.length; i++) {
         if (answers[i].innerHTML == current_question.correct) {
             correct.innerHTML = +correct.innerHTML + 1
             precent.innerHTML = Math.round(+correct.innerHTML / (+correct.innerHTML + +incorrect.innerHTML) * 100) + "%"
-            answers[i].style.backgroundColor = "#00FF00" 
+            answers[i].style.backgroundColor = "#00FF00"
             anime({
                 targets: answers[i],
                 backgroundColor: "#000000",
@@ -168,7 +168,7 @@ for (let i = 0; i < answers.length; i++) {
         } else {
             incorrect.innerHTML = +incorrect.innerHTML + 1
             precent.innerHTML = Math.round(+correct.innerHTML / (+correct.innerHTML + +incorrect.innerHTML) * 100) + "%"
-            answers[i].style.backgroundColor = "#FF0000" 
+            answers[i].style.backgroundColor = "#FF0000"
             anime({
                 targets: answers[i],
                 backgroundColor: "#000000",
@@ -186,43 +186,43 @@ for (let i = 0; i < answers.length; i++) {
 
 
 bn10.addEventListener("click", function () {
-  minimum = minimum - 10
-  bcmin.innerHTML = minimum
-  restart()
+    minimum = minimum - 10
+    bcmin.innerHTML = minimum
+    restart()
 })
 bn1.addEventListener("click", function () {
-  minimum = minimum - 1
-  bcmin.innerHTML = minimum
-  restart()
+    minimum = minimum - 1
+    bcmin.innerHTML = minimum
+    restart()
 })
 b10.addEventListener("click", function () {
-  minimum = minimum + 10
-  bcmin.innerHTML = minimum
-  restart()
+    minimum = minimum + 10
+    bcmin.innerHTML = minimum
+    restart()
 })
 b1.addEventListener("click", function () {
-  minimum = minimum + 1
-  bcmin.innerHTML = minimum
-  restart()
+    minimum = minimum + 1
+    bcmin.innerHTML = minimum
+    restart()
 })
 
 an10.addEventListener("click", function () {
-  maximum = maximum - 10
-  acmax.innerHTML = maximum
-  restart()
+    maximum = maximum - 10
+    acmax.innerHTML = maximum
+    restart()
 })
 an1.addEventListener("click", function () {
-  maximum = maximum - 1
-  acmax.innerHTML = maximum
-  restart()
+    maximum = maximum - 1
+    acmax.innerHTML = maximum
+    restart()
 })
 a10.addEventListener("click", function () {
-  maximum = maximum + 10
-  acmax.innerHTML = maximum
-  restart()
+    maximum = maximum + 10
+    acmax.innerHTML = maximum
+    restart()
 })
 a1.addEventListener("click", function () {
-  maximum = maximum + 1
-  acmax.innerHTML = maximum
-  restart()
+    maximum = maximum + 1
+    acmax.innerHTML = maximum
+    restart()
 })
