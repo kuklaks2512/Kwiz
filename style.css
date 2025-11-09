@@ -2,6 +2,7 @@ body {
     background-color: #000000;
     user-select: none;
     font-family: "Montserrat", sans-serif;
+    overflow:hidden;
 }
 
 
