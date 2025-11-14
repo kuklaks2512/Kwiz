@@ -160,7 +160,7 @@ for (let i = 0; i < answers.length; i++) {
             answers[i].style.backgroundColor = "#00FF00"
             anime({
                 targets: answers[i],
-                backgroundColor: "#rgba(0, 0, 0, 0)",
+                backgroundColor: "rgba(0, 0, 0, 0)",
                 delay: 100,
                 duration: 50,
                 easing: "linear"
