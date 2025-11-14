@@ -3,6 +3,10 @@ body {
     user-select: none;
     font-family: "Montserrat", sans-serif;
     overflow:hidden;
+      filter: url("#turb");
+background: #1c1c1c;
+background: radial-gradient(circle,rgba(28, 28, 28, 1) 0%, rgba(23, 23, 23, 1) 49%, rgba(0, 0, 0, 1) 100%);
+
 }
 
 
@@ -59,6 +63,7 @@ body {
     margin: 0px 5px 0px 5px;
     transition: all 0.2s ease-in-out;
     opacity: 0.65;
+    
 }
 
 .cor:hover,
@@ -91,15 +96,17 @@ body {
     border-radius: 10px;
     margin: 20px;
     transition: all 0.2s ease-in-out;
+
 }
 
 .difficulty:hover {
     cursor: pointer;
     scale: 1.2;
     transition: all 0.2s ease-in-out;
-    border: 2px solid rgb(0, 0, 0);
-    color: rgb(0, 0, 0);
+    border: 2px solid rgba(0, 0, 0, 0);
+    color: #000000;
     background-color: rgb(255, 255, 255);
+
 }
 
 .edit,
@@ -157,6 +164,7 @@ body {
 .b1,
 .b10 {
     width: 45px;
+
 }
 
 
@@ -176,5 +184,3 @@ body {
     cursor: pointer;
     scale: 1.2;
 }
-
-.
