@@ -55,6 +55,7 @@ difficulty.addEventListener("click", function () {
         bcmin.innerHTML = "Minimum"
         edit.style.scale = "0.5"
         edit2.style.scale = "0.5"
+
         restart()
     }
     else {
@@ -159,7 +160,7 @@ for (let i = 0; i < answers.length; i++) {
             answers[i].style.backgroundColor = "#00FF00"
             anime({
                 targets: answers[i],
-                backgroundColor: "#000000",
+                backgroundColor: "#rgba(0, 0, 0, 0)",
                 delay: 100,
                 duration: 50,
                 easing: "linear"
@@ -171,7 +172,7 @@ for (let i = 0; i < answers.length; i++) {
             answers[i].style.backgroundColor = "#FF0000"
             anime({
                 targets: answers[i],
-                backgroundColor: "#000000",
+                backgroundColor: "rgba(0, 0, 0, 0)",
                 delay: 100,
                 duration: 50,
                 easing: "linear"
